@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock @harichselvamc</title>
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
+  <style>
+   @import url('https://fonts.googleapis.com/css2?family=Ceviche+One&display=swap');
+    body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: black;
+        margin: 0;
+        color: white;
+        font-family: 'Ceviche One',cursive;
+    }
+    .timer{
+        font-size: 5em;
+    }
+    .footer-social-links{
+        margin-top: 20px;
+    }
+    .social-link{
+        color: white;
+        margin: 0 30px;
+        text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+    <div class="timer" id="timer">harichselvamc</div>
+    <nav class="footer-social-links">
+        <a href="https://twitter.com/harichselvamc" class="social-link"><i class="mdi mdi-twitter"></i></a>
+        <a href="https://join.skype.com/invite/pHjvePSCGIQI" class="social-link"><i class="mdi mdi-skype"></i></a>
+        <a href="https://github.com/harichselvamc" class="social-link"><i class="mdi mdi-git"></i></a>
+        <a href="https://www.linkedin.com/in/harichselvamc" class="social-link"><i class="mdi mdi-linkedin"></i></a>
+        <a href="https://medium.com/@harichselvamc" class="social-link"><i class="mdi mdi-medium"></i></a>
+    </nav>
+    <script>
+        function updatetime(){
+            const now= new Date();
+            const options={
+                timeZone:"Asia/Kolkata",
+                hour:"2-digit",
+                minute:"2-digit",
+                second:'2-digit',
+                hour12:true
+            };
+            const timestring=now.toLocaleTimeString('en-US',options);
+            document.getElementById("timer").textContent=timestring;
+        }
+
+        window.onload=()=>{
+            updatetime()
+            setInterval(updatetime,1000);
+        }
+    </script>
+    
+</body>
+</html>
